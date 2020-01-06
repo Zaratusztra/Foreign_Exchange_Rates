@@ -21,7 +21,6 @@ class Application:
             self.__main_window.update_rates(rates['rates'], rates['base'])
         except Exception as err:
             self.__main_window.warn(err)
-            self.__main_window.statusBar().showMessage(str(err))
         
         
 

@@ -1,0 +1,1 @@
+Just some silly exercise - learning PyQt, nevertheless I'm making this public repository.
