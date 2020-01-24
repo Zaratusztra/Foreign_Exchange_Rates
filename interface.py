@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from PyQt5.QtWidgets import *
+from decimal import Decimal
 
 import data_management
 
@@ -40,7 +43,9 @@ class Gui(QMainWindow):
         all_rates = list()
         for key in new_rates.keys():
             if key != base:
-                all_rates.append("{}={} {}\n".format(key,new_rates[key],base))
+                value = new_rates[key]
+                #value = Decimal(new_rates[key])/Decimal('1.0')
+                all_rates.append("1{}={}{}\n".format(base, key, value))
         all_rates.sort()
         new_text = str()
         for l in all_rates:
