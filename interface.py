@@ -44,7 +44,6 @@ class Gui(QMainWindow):
         for key in new_rates.keys():
             if key != base:
                 value = new_rates[key]
-                #value = Decimal(new_rates[key])/Decimal('1.0')
                 all_rates.append("1{}={}{}\n".format(base, key, value))
         all_rates.sort()
         new_text = str()
