@@ -44,7 +44,7 @@ class Gui(QMainWindow):
         for key in new_rates.keys():
             if key != base:
                 value = new_rates[key]
-                all_rates.append("1{}={}{}\n".format(base, key, value))
+                all_rates.append("1{}={}{}\n".format(base, value, key))
         all_rates.sort()
         new_text = str()
         for l in all_rates:
