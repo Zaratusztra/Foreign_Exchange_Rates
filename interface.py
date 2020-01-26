@@ -41,11 +41,10 @@ class Gui(QMainWindow):
 
     def update_rates(self, new_rates, base):
         all_rates = list()
-        for key in new_rates.keys():
+        for key in sorted(new_rates.keys()):
             if key != base:
                 value = new_rates[key]
-                all_rates.append("1{}={}{}\n".format(base, value, key))
-        all_rates.sort()
+                all_rates.append("1{}={} {}\n".format(base, value, key))
         new_text = str()
         for l in all_rates:
             new_text += l
