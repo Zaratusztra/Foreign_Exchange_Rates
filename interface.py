@@ -30,9 +30,14 @@ class Gui(QMainWindow):
         self.label_rates.resize(450, 200)
 
         self.base_choice_widget = QComboBox(self)
-        self.base_choice_widget.insertItem(1,'EUR')
-        self.base_choice_widget.insertItem(2,'USD')
-        self.base_choice_widget.insertItem(3,'PLN')
+        index = 1
+        for currency in data_management.CURRENCIES:
+            self.base_choice_widget.insertItem(index, str(currency))
+            index += 1
+        #self.base_choice_widget.insertItem(1,'EUR')
+        #self.base_choice_widget.insertItem(2,'USD')
+        #self.base_choice_widget.insertItem(3,'PLN')
+        
         self.base_choice_widget.resize(self.base_choice_widget.sizeHint())
         self.base_choice_widget.move(25, 65)
         self.base_choice_widget.currentIndexChanged.connect(self.send_new_base)
